@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <title>منيو مطعم وكافيه تيتو</title>
+  <!-- استدعاء مكتبة الأيقونات Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanwMG4myd1ZNRfOI7fLPHlZBq5lMZ/GTG1dHTQzy6J5VjQp0cN8S0A=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <style>
+    /* إعدادات أساسية للخط واتجاه النص */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      direction: rtl; /* المحتوى باللغة العربية */
+      font-family: "Tajawal", sans-serif; /* أو أي خط تفضله */
+      background: linear-gradient(to bottom right, #f3f3f3, #ffffff);
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* ترويسة الصفحة */
+    header {
+      background: linear-gradient(to right, #444, #666);
+      color: #fff;
+      text-align: center;
+      padding: 40px 20px;
+      margin-bottom: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* خلفية صورة شفافة في الهيدر (اختياري) */
+    header::before {
+      content: "";
+      background: url('https://via.placeholder.com/1200x400/333/fff?text=Restaurant+Background') no-repeat center center;
+      background-size: cover;
+      opacity: 0.2; 
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      z-index: 0;
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+      z-index: 1; /* لجعل النص فوق صورة الخلفية */
+      position: relative;
+    }
+
+    header p {
+      font-size: 1rem;
+      margin-bottom: 0;
+      opacity: 0.9;
+      z-index: 1;
+      position: relative;
+    }
+
+    /* حاوية المحتوى الأساسي */
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto 50px auto;
+      position: relative;
+    }
+
+    /* نص اعتذار أو ملاحظة */
+    .note {
+      text-align: center;
+      margin: 0 auto 30px auto;
+      color: #666;
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
+
+    /* عناوين الأقسام */
+    .category {
+      margin-bottom: 40px;
+    }
+
+    .category h2 {
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+      display: inline-block;
+      padding-bottom: 5px;
+      border-bottom: 3px solid #444;
+      color: #444;
+      position: relative;
+    }
+
+    .category h2 i {
+      margin-left: 8px;
+      color: #e74c3c; /* لون أيقونة */
+    }
+
+    /* شبكة عرض العناصر */
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 15px;
+    }
+
+    .menu-item {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: box-shadow 0.2s ease;
+      position: relative;
+    }
+
+    .menu-item:hover {
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .item-name {
+      font-weight: bold;
+      font-size: 1.05rem;
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+    .item-price {
+      color: #666;
+      font-size: 0.95rem;
+      margin-top: auto; /* لضمان بقاء السعر في الأسفل */
+    }
+
+    /* فوتر بسيط */
+    footer {
+      text-align: center;
+      background-color: #444;
+      color: #fff;
+      padding: 15px 20px;
+      font-size: 0.9rem;
+    }
+
+    /* جعل الفوتر ثابتًا بأسفل الصفحة إن أردت (اختياري)
+       ملاحظة: هذا قد يتداخل مع بعض الشاشات الصغيرة */
+    /*
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+    */
+
+    @media (max-width: 768px) {
+      footer {
+        position: static;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- الترويسة -->
+  <header>
+    <h1>منيو مطعم وكافيه تيتو</h1>
+    <p>أشهى المأكولات والمشروبات على الإطلاق</p>
+  </header>
+
+  <!-- حاوية المحتوى -->
+  <div class="container">
+
+    <!-- ملاحظة أو تنبيه -->
+    <p class="note">نأسف لعدم جاهزية النسخة الأصلية حالياً</p>
+
+    <!-- قسم المأكولات الحارة -->
+    <div class="category">
+      <h2><i class="fas fa-pepper-hot"></i> المأكولات الحارة</h2>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div class="item-name">فاهيتا لحم</div>
+          <div class="item-price">IQD 4000</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-name">فاهيتا دجاج</div>
+          <div class="item-price">IQD 3500</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-name">فيلادلفيا لحم</div>
+          <div class="item-price">IQD 4500</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-name">فيلادلفيا دجاج</div>
+          <div class="item-price">IQD 4000</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-name">بيتزا خضار</div>
+          <div class="item-price">IQD 5000</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-name">بيتزا بيبروني</div>
+          <div class="item-price">IQD 6000</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-name">شوربة دجاج</div>
+          <div class="item-price">IQD 2000</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-name">صحن معكرونة</div>
+          <div class="item-price">IQD 4000</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- قسم المعجنات والحلويات -->
+    <div class="category">
+      <h2><i class="fas fa-birthday-cake"></i> المعجنات والحلويات</h2>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div class="item-name">كرواسون</div>
+          <div class="item-price">IQD 1500</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-name">يورك (جين / أدم / دجاج)</div>
+          <div class="item-price">IQD 3000</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-name">كريب نوتيلا</div>
+          <div class="item-price">IQD 2000</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-name">وافل بالمكسرات</div>
+          <div class="item-price">IQD 2500</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-name">كيك</div>
+          <div class="item-price">IQD 3000</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-name">تراب الملوك</div>
+          <div class="item-price">IQD 3500</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-name">ترايفل</div>
+          <div class="item-price">IQD 3500</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-name">كريم باف</div>
+          <div class="item-price">IQD 2000</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- قسم السلطات -->
+    <div class="category">
+      <h2><i class="fas fa-seedling"></i> السلطات</h2>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div class="item-name">فتوش</div>
+          <div class="item-price">IQD 2000</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-name">سلطة فواكه</div>
+          <div class="item-price">IQD 3000</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- قسم المأكولات الباردة -->
+    <div class="category">
+      <h2><i class="fas fa-snowflake"></i> المأكولات الباردة</h2>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div class="item-name">لفات بيض</div>
+          <div class="item-price">IQD 3000</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-name">كلوب ساندوش</div>
+          <div class="item-price">IQD 4500</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-name">ميني برجر</div>
+          <div class="item-price">IQD 4000</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- قسم المشروبات الحارة -->
+    <div class="category">
+      <h2><i class="fas fa-mug-hot"></i> المشروبات الحارة</h2>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div class="item-name">شاي</div>
+          <div class="item-price">IQD 1000</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-name">قهوة تركية عادي</div>
+          <div class="item-price">IQD 2000</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-name">قهوة تركية دبل</div>
+          <div class="item-price">IQD 2500</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-name">قهوة فرنسية</div>
+          <div class="item-price">IQD 2500</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-name">اسبريسو</div>
+          <div class="item-price">IQD 2000</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-name">اسبريسو دبل</div>
+          <div class="item-price">IQD 2500</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-name">أمريكانو</div>
+          <div class="item-price">IQD 2000</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-name">شاي كرك</div>
+          <div class="item-price">IQD 2000</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-name">هوت شوكليت</div>
+          <div class="item-price">IQD 3000</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-name">كوفي موكا</div>
+          <div class="item-price">IQD 3000</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-name">زهورات</div>
+          <div class="item-price">IQD 2000</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- قسم المشروبات الباردة -->
+    <div class="category">
+      <h2><i class="fas fa-wine-glass-alt"></i> المشروبات الباردة</h2>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div class="item-name">مشروبات غازية بأنواعها</div>
+          <div class="item-price">IQD 1000</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-name">عصائر جاهزة بأنواعها</div>
+          <div class="item-price">IQD 1500</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-name">عصائر فريش (برتقال / ليمون ونعنع)</div>
+          <div class="item-price">IQD 2000</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-name">عصير رمان</div>
+          <div class="item-price">IQD 2500</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-name">عصير أفوكادو مع قشطة وعسل</div>
+          <div class="item-price">IQD 4000</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-name">ميلك شيك فراولة</div>
+          <div class="item-price">IQD 3750</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-name">موكا بارد</div>
+          <div class="item-price">IQD 3000</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-name">فانيلا شيك</div>
+          <div class="item-price">IQD 3000</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-name">آيس لاتيه</div>
+          <div class="item-price">IQD 3500</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-name">آيس تي (ليمون / خوخ)</div>
+          <div class="item-price">IQD 2000</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-name">سلاش فراولة</div>
+          <div class="item-price">IQD 2000</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-name">سلاش موز وحليب</div>
+          <div class="item-price">IQD 2000</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-name">سلاش موز ورمان</div>
+          <div class="item-price">IQD 2500</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-name">عصير بينا كولادا</div>
+          <div class="item-price">IQD 3000</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-name">عصير تروبيكان</div>
+          <div class="item-price">IQD 3000</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- قسم الكوكتيل -->
+    <div class="category">
+      <h2><i class="fas fa-blender"></i> كوكتيل</h2>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div class="item-name">كوكتيل فواكه مشكل</div>
+          <div class="item-price">IQD 3000</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-name">موهيتو فراولة</div>
+          <div class="item-price">IQD 5000</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-name">موهيتو ليمون ونعنع</div>
+          <div class="item-price">IQD 5000</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-name">باشن فروت</div>
+          <div class="item-price">IQD 5000</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-name">بلو + ريد بول</div>
+          <div class="item-price">IQD 6000</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  
+  <!-- فوتر الصفحة -->
+  <footer>
+    © 2025 مطعم وكافيه تيتو. جميع الحقوق محفوظة.
+  </footer>
+
+</body>
+</html>
